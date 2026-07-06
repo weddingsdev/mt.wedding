@@ -190,6 +190,8 @@ function initRsvpForm() {
       localStorage.setItem(RSVP_LAST_SUBMIT_KEY, String(Date.now()));
       localStorage.setItem(RSVP_SUBMITTED_KEY, '1');
       showSuccess();
+    } catch (e) {
+      renderErrors({ net: 'Не вдалося надіслати. Перевірте інтернет і спробуйте ще раз.' });
     } finally {
       submitBtn.disabled = false;
     }

@@ -11,6 +11,8 @@ const GOOGLE_FORM_CONFIG = {
   entryAttending: 'entry.152858440', // Так / Ні
 };
 
+const ATTENDING_MAP = { yes: 'Так', no: 'Ні' };
+
 const RSVP_RESUBMIT_GUARD_MS = 60_000;
 const RSVP_LAST_SUBMIT_KEY = 'rsvpLastSubmitAt';
 const RSVP_SUBMITTED_KEY = 'rsvpSubmitted';
@@ -160,7 +162,7 @@ function initRsvpForm() {
     }
     const body = new FormData();
     body.append(GOOGLE_FORM_CONFIG.entryName, payload.name);
-    body.append(GOOGLE_FORM_CONFIG.entryAttending, payload.attending);
+    body.append(GOOGLE_FORM_CONFIG.entryAttending, ATTENDING_MAP[payload.attending] ?? payload.attending);
     await fetch(GOOGLE_FORM_CONFIG.actionUrl, { method: 'POST', mode: 'no-cors', body });
   }
 

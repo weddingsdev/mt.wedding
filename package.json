@@ -1,0 +1,14 @@
+{
+  "name": "tm-wedding",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test",
+    "build:css": "tailwindcss -i css/input.css -o css/style.css --minify",
+    "watch:css": "tailwindcss -i css/input.css -o css/style.css --watch"
+  },
+  "devDependencies": {
+    "tailwindcss": "^4",
+    "@tailwindcss/cli": "^4"
+  }
+}

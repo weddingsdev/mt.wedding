@@ -1,0 +1,142 @@
+@layer components, utilities;
+
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/utilities.css" layer(utilities);
+
+@font-face {
+  font-family: 'Allegretto Script';
+  src: url('../assets/fonts/Allegretto_Script_One_Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --color-black: #181818;
+  --color-chocolate: #3C2A20;
+  --color-champagne: #CBB493;
+  --color-ivory: #F3F1EC;
+  --color-taupe: #B49A80;
+  --color-champagne-cream: #DCCBB0;
+  --color-gold: #C7A94F;
+  --color-caramel-gold: #C99A5C;
+  --color-powder-rose: #CB9CA0;
+
+  --color-cream: #FBF8F2;
+  --color-blush: #F7EFEA;
+  --color-ink: #6B4A3A;
+  --color-ink-soft: #5C4A3A;
+  --color-caption: #8A6A3F;
+  --color-rose-text: #A17858;
+  --color-error: #A5473F;
+
+  --font-heading: Georgia, 'Times New Roman', serif;
+  --font-body: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-script: 'Allegretto Script', cursive;
+}
+
+@keyframes heart-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.12); }
+}
+
+@layer components {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    font-family: var(--font-body);
+    color: var(--color-ink-soft);
+    background: var(--color-cream);
+    line-height: 1.5;
+  }
+
+  img {
+    max-width: 100%;
+    display: block;
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+
+  .reveal--visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .calendar__day {
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .calendar__day--blank {
+    visibility: hidden;
+  }
+
+  .calendar__day--wedding-badge {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--color-gold), var(--color-powder-rose));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(203, 156, 160, 0.55);
+    animation: heart-pulse 2.2s ease-in-out infinite;
+  }
+
+  .calendar__heart {
+    position: absolute;
+    top: -6px;
+    right: 2px;
+    font-size: 13px;
+    color: var(--color-powder-rose);
+  }
+
+  .swatch {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    display: inline-block;
+    flex-shrink: 0;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(203, 156, 160, 0.35);
+  }
+
+  .swatch::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.55) 0%, rgba(255, 255, 255, 0) 35%, rgba(255, 255, 255, 0.18) 60%, rgba(255, 255, 255, 0) 100%);
+  }
+
+  .attend-toggle {
+    flex: 1;
+    padding: 12px;
+    border-radius: 999px;
+    border: 1px solid rgba(203, 156, 160, 0.5);
+    background: var(--color-cream);
+    color: var(--color-ink);
+    font-size: 14.5px;
+    cursor: pointer;
+    font-family: inherit;
+  }
+
+  .attend-toggle--active {
+    background: var(--color-powder-rose);
+    color: #4A2F28;
+  }
+}

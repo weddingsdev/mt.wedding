@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Микола і Тетяна — Весілля 13.09.2026</title>
+  <meta name="theme-color" content="#FBF8F2" />
+  <link rel="preload" as="image" href="assets/images/hero.jpg" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="bg-cream">
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="icon-divider" viewBox="0 0 120 20"><line x1="0" y1="10" x2="42" y2="10" stroke="#C7A94F" stroke-width="1"></line><circle cx="48" cy="10" r="1.5" fill="#C7A94F"></circle><rect x="56" y="6" width="8" height="8" fill="none" stroke="#C7A94F" stroke-width="1" transform="rotate(45 60 10)"></rect><circle cx="72" cy="10" r="1.5" fill="#C7A94F"></circle><line x1="78" y1="10" x2="120" y2="10" stroke="#C7A94F" stroke-width="1"></line></symbol>
+      <symbol id="icon-rings" viewBox="0 0 26 26"><circle cx="9" cy="16" r="6" fill="none" stroke="#C7A94F" stroke-width="1.5"></circle><circle cx="17" cy="16" r="6" fill="none" stroke="#C7A94F" stroke-width="1.5"></circle></symbol>
+      <symbol id="icon-transfer" viewBox="0 0 26 26"><line x1="8" y1="4" x2="8" y2="22" stroke="currentColor" stroke-width="1.5"></line><line x1="5" y1="4" x2="5" y2="12" stroke="currentColor" stroke-width="1.5"></line><line x1="11" y1="4" x2="11" y2="12" stroke="currentColor" stroke-width="1.5"></line><line x1="18" y1="4" x2="18" y2="22" stroke="currentColor" stroke-width="1.5"></line><path d="M15 4 C15 9, 21 9, 21 4" fill="none" stroke="currentColor" stroke-width="1.5"></path></symbol>
+      <symbol id="icon-close" viewBox="0 0 20 20"><line x1="4" y1="4" x2="16" y2="16" stroke="currentColor" stroke-width="2"></line><line x1="16" y1="4" x2="4" y2="16" stroke="currentColor" stroke-width="2"></line></symbol>
+    </defs>
+  </svg>
+
+  <nav id="nav" class="fixed top-0 inset-x-0 z-50 h-14 flex items-center justify-center px-5 bg-cream/85 backdrop-blur-md border-b border-powder-rose/30">
+    <a href="#hero" class="font-script text-[clamp(22px,2.6vw,28px)] text-ink no-underline cursor-pointer" data-scroll-target="hero">Микола &amp; Тетяна</a>
+  </nav>
+
+  <section id="hero" class="relative h-[100svh] min-h-[580px] flex items-end">
+    <img src="assets/images/hero.jpg" alt="Микола і Тетяна" width="1200" height="1800" fetchpriority="high" class="absolute inset-0 w-full h-full object-cover object-[center_52%]" />
+    <div class="absolute inset-0 bg-[linear-gradient(180deg,rgba(251,248,242,0)_38%,rgba(251,248,242,0.92)_90%)]"></div>
+    <div class="relative w-full flex flex-col items-center text-center gap-[18px] px-5 md:px-12 pt-8 pb-12 md:pb-20">
+      <svg width="120" height="20" aria-hidden="true"><use href="#icon-divider"></use></svg>
+      <h1 class="font-script text-[clamp(46px,10vw,80px)] leading-none text-ink m-0">Микола і Тетяна</h1>
+      <p class="text-[15px] italic font-heading tracking-[0.3px] text-rose-text m-0">До нашого весілля залишилось</p>
+      <div class="flex gap-2 md:gap-4" role="timer" aria-live="polite">
+        <div class="flex flex-col items-center gap-1 min-w-[58px] md:min-w-[76px] px-1 py-3 md:py-4 rounded-xl bg-cream/95 shadow-[0_6px_20px_rgba(203,156,160,0.28)]">
+          <span class="font-heading text-[clamp(22px,3.5vw,30px)] text-ink" id="countdown-days">00</span>
+          <span class="text-[9px] tracking-[1px] uppercase text-caption">Дні</span>
+        </div>
+        <div class="flex flex-col items-center gap-1 min-w-[58px] md:min-w-[76px] px-1 py-3 md:py-4 rounded-xl bg-cream/95 shadow-[0_6px_20px_rgba(203,156,160,0.28)]">
+          <span class="font-heading text-[clamp(22px,3.5vw,30px)] text-ink" id="countdown-hours">00</span>
+          <span class="text-[9px] tracking-[1px] uppercase text-caption">Год</span>
+        </div>
+        <div class="flex flex-col items-center gap-1 min-w-[58px] md:min-w-[76px] px-1 py-3 md:py-4 rounded-xl bg-cream/95 shadow-[0_6px_20px_rgba(203,156,160,0.28)]">
+          <span class="font-heading text-[clamp(22px,3.5vw,30px)] text-ink" id="countdown-minutes">00</span>
+          <span class="text-[9px] tracking-[1px] uppercase text-caption">Хв</span>
+        </div>
+        <div class="flex flex-col items-center gap-1 min-w-[58px] md:min-w-[76px] px-1 py-3 md:py-4 rounded-xl bg-cream/95 shadow-[0_6px_20px_rgba(203,156,160,0.28)]">
+          <span class="font-heading text-[clamp(22px,3.5vw,30px)] text-ink" id="countdown-seconds">00</span>
+          <span class="text-[9px] tracking-[1px] uppercase text-caption">Сек</span>
+        </div>
+      </div>
+      <p class="text-[13px] text-rose-text tracking-[1px] font-heading italic m-0">13 вересня 2026</p>
+    </div>
+  </section>
+
+  <section id="invite" data-reveal class="reveal bg-cream">
+    <div class="max-w-180 md:max-w-240 mx-auto flex flex-col items-center gap-6 px-[clamp(20px,6vw,48px)] py-[clamp(56px,10vh,96px)] text-center">
+      <svg width="120" height="20" aria-hidden="true"><use href="#icon-divider"></use></svg>
+      <h2 class="font-script text-[clamp(36px,6vw,48px)] text-ink m-0">Дорогі гості!</h2>
+      <p class="text-base md:text-lg leading-[1.85] text-ink-soft max-w-[460px] m-0">Запрошуємо вас розділити з нами радість особливої для нас події та стати частиною нашої історії</p>
+      <div class="relative w-full max-w-[330px] flex flex-col gap-3 px-[22px] py-[26px] rounded-2xl bg-[#FFFDF9] shadow-[0_10px_30px_rgba(203,156,160,0.2)] border border-powder-rose/30">
+        <p class="text-[13px] font-heading italic tracking-[1px] text-caption m-0">Вересень 2026</p>
+        <div class="grid grid-cols-7 gap-1.5 text-[10px] text-champagne uppercase">
+          <span>Пн</span><span>Вт</span><span>Ср</span><span>Чт</span><span>Пт</span><span>Сб</span><span>Нд</span>
+        </div>
+        <div class="grid grid-cols-7 gap-1.5" id="calendar-grid"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="timing" data-reveal class="reveal bg-blush">
+    <div class="max-w-180 md:max-w-240 mx-auto flex flex-col items-center gap-7 px-[clamp(20px,6vw,48px)] py-[clamp(56px,10vh,96px)] text-center">
+      <svg width="120" height="20" aria-hidden="true"><use href="#icon-divider"></use></svg>
+      <h2 class="font-script text-[clamp(36px,6vw,48px)] text-ink m-0">Таймінг дня</h2>
+      <ul class="list-none p-0 m-0 w-full max-w-[420px] flex flex-col gap-3.5">
+        <li class="flex items-center gap-[18px] px-5 py-4 rounded-2xl bg-[#FFFDF9] shadow-[0_8px_22px_rgba(203,156,160,0.18)] border border-powder-rose/25 text-left">
+          <svg width="28" height="28" aria-hidden="true" class="shrink-0"><use href="#icon-rings"></use></svg>
+          <span class="flex-1 text-[15px] text-ink-soft">Вінчання</span>
+          <span class="font-heading text-[17px] text-ink">12:00</span>
+        </li>
+        <li class="flex items-center gap-[18px] px-5 py-4 rounded-2xl bg-[#FFFDF9] shadow-[0_8px_22px_rgba(203,156,160,0.18)] border border-powder-rose/25 text-left">
+          <svg width="28" height="28" viewBox="0 0 26 26" aria-hidden="true" class="shrink-0"><rect x="4" y="8" width="18" height="11" rx="3" fill="none" stroke="#C7A94F" stroke-width="1.5"></rect><circle cx="9" cy="20" r="2" fill="#C7A94F"></circle><circle cx="17" cy="20" r="2" fill="#C7A94F"></circle></svg>
+          <span class="flex-1 text-[15px] text-ink-soft">Трансфер до ресторану (відправлення від церкви)</span>
+          <span class="font-heading text-[17px] text-ink">13:20</span>
+        </li>
+        <li class="flex items-center gap-[18px] px-5 py-4 rounded-2xl bg-[#FFFDF9] shadow-[0_8px_22px_rgba(203,156,160,0.18)] border border-powder-rose/25 text-left">
+          <svg width="28" height="28" aria-hidden="true" class="shrink-0 text-gold"><use href="#icon-transfer"></use></svg>
+          <span class="flex-1 text-[15px] text-ink-soft">Бенкет</span>
+          <span class="font-heading text-[17px] text-ink">14:00</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="locations" data-reveal class="reveal bg-cream">
+    <div class="max-w-180 md:max-w-240 mx-auto flex flex-col items-center gap-8 px-[clamp(20px,6vw,48px)] py-[clamp(56px,10vh,96px)] text-center">
+      <svg width="120" height="20" aria-hidden="true"><use href="#icon-divider"></use></svg>
+      <h2 class="font-script text-[clamp(36px,6vw,48px)] text-ink m-0">Локації</h2>
+      <div class="relative w-full max-w-[480px] flex flex-col">
+        <div class="absolute left-1/2 top-7 bottom-7 w-0.5 bg-[linear-gradient(180deg,#C7A94F,#CB9CA0)] -translate-x-1/2 z-0" aria-hidden="true"></div>
+
+        <article class="relative z-10 flex flex-col items-center gap-[18px] pb-11">
+          <div class="w-14 h-14 rounded-full bg-[#FFFDF9] border-2 border-gold flex items-center justify-center shadow-[0_6px_16px_rgba(203,156,160,0.35)] shrink-0">
+            <svg width="24" height="24" aria-hidden="true"><use href="#icon-rings"></use></svg>
+          </div>
+          <div class="w-full rounded-[18px] overflow-hidden shadow-[0_14px_34px_rgba(203,156,160,0.28)]">
+            <div class="relative h-[280px]">
+              <img src="assets/images/church.jpg" alt="Церква Пресвятої Богородиці, с. Крупсько" loading="lazy" width="1195" height="896" class="absolute inset-0 w-full h-full object-cover" />
+              <div class="absolute inset-0 bg-[linear-gradient(180deg,rgba(58,28,26,0)_40%,rgba(58,28,26,0.74)_100%)]"></div>
+              <div class="absolute left-5 right-5 bottom-[18px] flex flex-col gap-1 text-left">
+                <div class="font-script text-2xl text-cream">Вінчання шлюбу</div>
+                <div class="text-[13.5px] text-[#E9DCC7]">Церква Пресвятої Богородиці, с. Крупсько</div>
+              </div>
+            </div>
+            <div class="p-4 bg-[#FFFDF9]">
+              <a href="https://maps.app.goo.gl/FAu9WcfDyCSB9r2o9" target="_blank" rel="noopener" class="no-underline flex items-center justify-center gap-2 py-3.5 rounded-full border border-powder-rose/60 text-[13.5px] tracking-[0.4px] text-ink bg-powder-rose/[0.08] hover:bg-gold/20 transition-colors duration-200">
+                <svg width="14" height="14" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1 C6 1 3 4 3 8 C3 13 10 19 10 19 C10 19 17 13 17 8 C17 4 14 1 10 1 Z" fill="none" stroke="#6b4a3a" stroke-width="1.3"></path><circle cx="10" cy="8" r="2.3" fill="#6b4a3a"></circle></svg>
+                Прокласти маршрут
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <article class="relative z-10 flex flex-col items-center gap-[18px]">
+          <div class="w-14 h-14 rounded-full bg-[#FFFDF9] border-2 border-powder-rose flex items-center justify-center shadow-[0_6px_16px_rgba(203,156,160,0.35)] shrink-0">
+            <svg width="22" height="22" aria-hidden="true" class="text-powder-rose"><use href="#icon-transfer"></use></svg>
+          </div>
+          <div class="w-full rounded-[18px] overflow-hidden shadow-[0_14px_34px_rgba(203,156,160,0.28)]">
+            <div class="relative h-[280px]">
+              <img src="assets/images/restaurant.jpg" alt="Ресторан «Мала Італія», с. Пісочна" loading="lazy" width="976" height="1096" class="absolute inset-0 w-full h-full object-cover" />
+              <div class="absolute inset-0 bg-[linear-gradient(180deg,rgba(58,28,26,0)_40%,rgba(58,28,26,0.74)_100%)]"></div>
+              <div class="absolute left-5 right-5 bottom-[18px] flex flex-col gap-1 text-left">
+                <div class="font-script text-2xl text-cream">Бенкет</div>
+                <div class="text-[13.5px] text-[#E9DCC7]">Ресторан «Мала Італія», с. Пісочна</div>
+              </div>
+            </div>
+            <div class="p-4 bg-[#FFFDF9]">
+              <a href="https://maps.app.goo.gl/7JUE349jnhZ2r1sf9" target="_blank" rel="noopener" class="no-underline flex items-center justify-center gap-2 py-3.5 rounded-full border border-powder-rose/60 text-[13.5px] tracking-[0.4px] text-ink bg-powder-rose/[0.08] hover:bg-gold/20 transition-colors duration-200">
+                <svg width="14" height="14" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1 C6 1 3 4 3 8 C3 13 10 19 10 19 C10 19 17 13 17 8 C17 4 14 1 10 1 Z" fill="none" stroke="#6b4a3a" stroke-width="1.3"></path><circle cx="10" cy="8" r="2.3" fill="#6b4a3a"></circle></svg>
+                Прокласти маршрут
+              </a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="dresscode" data-reveal class="reveal bg-blush">
+    <div class="max-w-180 md:max-w-240 mx-auto flex flex-col items-center gap-6 px-[clamp(20px,6vw,48px)] py-[clamp(56px,10vh,96px)] text-center">
+      <svg width="120" height="20" aria-hidden="true"><use href="#icon-divider"></use></svg>
+      <h2 class="font-script text-[clamp(36px,6vw,48px)] text-ink m-0">Дрес-код</h2>
+      <p class="text-base md:text-lg leading-[1.85] text-ink-soft max-w-[460px] m-0">Ми будемо дуже вдячні, якщо ви оберете вбрання у кольорах нашого весілля</p>
+
+      <div class="w-full max-w-[680px] flex flex-wrap justify-center gap-9 px-[clamp(22px,4vw,40px)] py-[30px] rounded-[20px] bg-[linear-gradient(135deg,rgba(203,156,160,0.18),rgba(199,169,79,0.16))] border border-powder-rose/30">
+        <div class="flex-1 min-w-[240px] max-w-[280px] flex flex-col gap-4 relative md:pr-[18px]">
+          <div class="hidden md:block absolute right-[-18px] top-1 bottom-1 w-px bg-[linear-gradient(180deg,rgba(199,169,79,0),rgba(199,169,79,0.5),rgba(199,169,79,0))]" aria-hidden="true"></div>
+          <div class="flex items-center justify-center gap-2">
+            <span class="w-4 h-px bg-gold/60"></span>
+            <h3 class="font-script text-2xl text-ink text-center m-0">Для чоловіків</h3>
+            <span class="w-4 h-px bg-gold/60"></span>
+          </div>
+          <ul class="list-none p-0 m-0 flex flex-wrap gap-x-[18px] gap-y-3 justify-center">
+            <li class="flex items-center gap-2 text-[13.5px] text-ink"><span class="swatch" style="background: var(--color-black)"></span>Чорний</li>
+            <li class="flex items-center gap-2 text-[13.5px] text-ink"><span class="swatch" style="background: var(--color-chocolate)"></span>Темно-шоколадний</li>
+            <li class="flex items-center gap-2 text-[13.5px] text-ink"><span class="swatch" style="background: var(--color-champagne)"></span>Шампань / бежевий</li>
+            <li class="flex items-center gap-2 text-[13.5px] text-ink"><span class="swatch" style="background: var(--color-ivory)"></span>Білий / айворі</li>
+          </ul>
+        </div>
+
+        <div class="flex-1 min-w-[240px] max-w-[280px] flex flex-col gap-4">
+          <div class="flex items-center justify-center gap-2">
+            <span class="w-4 h-px bg-powder-rose/70"></span>
+            <h3 class="font-script text-2xl text-ink text-center m-0">Для жінок</h3>
+            <span class="w-4 h-px bg-powder-rose/70"></span>
+          </div>
+          <ul class="list-none p-0 m-0 flex flex-wrap gap-x-[18px] gap-y-3 justify-center">
+            <li class="flex items-center gap-2 text-[13.5px] text-ink"><span class="swatch" style="background: var(--color-taupe)"></span>Тепла таупе / мокко-беж</li>
+            <li class="flex items-center gap-2 text-[13.5px] text-ink"><span class="swatch" style="background: var(--color-champagne-cream)"></span>Шампань-крем</li>
+            <li class="flex items-center gap-2 text-[13.5px] text-ink"><span class="swatch" style="background: var(--color-gold)"></span>Золотий</li>
+            <li class="flex items-center gap-2 text-[13.5px] text-ink"><span class="swatch" style="background: var(--color-caramel-gold)"></span>Карамельно-золотий / бронза</li>
+            <li class="flex items-center gap-2 text-[13.5px] text-ink"><span class="swatch" style="background: var(--color-powder-rose)"></span>Пудрово-рожевий</li>
+            <li class="flex items-center gap-2 text-[13.5px] text-ink"><span class="swatch" style="background: var(--color-black)"></span>Чорний</li>
+            <li class="flex items-center gap-2 text-[13.5px] text-ink"><span class="swatch" style="background: var(--color-chocolate)"></span>Темно-шоколадний</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="w-full max-w-[420px] flex gap-3.5 items-start text-left px-[22px] py-5 rounded-2xl bg-[linear-gradient(135deg,rgba(199,169,79,0.18),rgba(203,156,160,0.16))] border border-gold/35 mt-1">
+        <svg width="24" height="30" viewBox="0 0 22 28" aria-hidden="true" class="shrink-0 mt-0.5"><rect x="7" y="0" width="8" height="6" rx="1" fill="none" stroke="#8A6A3F" stroke-width="1.3"></rect><path d="M7 6 L5 10 L5 26 Q5 27 6 27 L16 27 Q17 27 17 26 L17 10 L15 6 Z" fill="none" stroke="#8A6A3F" stroke-width="1.3"></path></svg>
+        <div class="flex flex-col gap-1">
+          <div class="font-script text-2xl text-caption m-0">P.S.</div>
+          <p class="text-[15px] leading-[1.7] text-ink-soft m-0">Замість квітів будемо раді пляшечці алкоголю з підписом, на яку подію нам її відкоркувати.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="rsvp" data-reveal class="reveal bg-cream">
+    <div class="max-w-180 md:max-w-240 mx-auto flex flex-col items-center gap-6 px-[clamp(20px,6vw,48px)] py-[clamp(56px,10vh,110px)] text-center">
+      <svg width="120" height="20" aria-hidden="true"><use href="#icon-divider"></use></svg>
+      <h2 class="font-script text-[clamp(36px,6vw,48px)] text-ink m-0">Анкета гостя</h2>
+      <p class="text-[14.5px] leading-[1.7] text-caption max-w-[360px] m-0">Будь ласка, надайте вашу відповідь про присутність до 10.08.2026</p>
+
+      <form id="rsvp-form" novalidate class="w-full max-w-[350px] flex flex-col gap-4 px-6 py-7 rounded-2xl bg-[#FFFDF9] shadow-[0_12px_32px_rgba(203,156,160,0.18)] border-t-[3px] border-t-powder-rose border-x border-b border-powder-rose/25">
+        <div class="relative">
+          <svg width="15" height="15" viewBox="0 0 20 20" aria-hidden="true" class="absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none"><circle cx="10" cy="6" r="4" fill="none" stroke="#B98C88" stroke-width="1.3"></circle><path d="M2 18 C2 13 6 11 10 11 C14 11 18 13 18 18" fill="none" stroke="#B98C88" stroke-width="1.3"></path></svg>
+          <label for="rsvp-name" class="sr-only">Ім'я та прізвище</label>
+          <input type="text" id="rsvp-name" name="name" autocomplete="name" placeholder="Ім'я та прізвище" class="w-full box-border pl-9 pr-3.5 py-3 rounded-full border border-powder-rose/45 bg-cream text-[14.5px] text-ink focus:outline-none focus:ring-2 focus:ring-gold" />
+        </div>
+        <fieldset class="flex gap-2.5 border-none p-0 m-0">
+          <legend class="sr-only">Чи плануєте бути на весіллі?</legend>
+          <button type="button" id="rsvp-attending-yes" data-attend="yes" class="attend-toggle" aria-pressed="false">
+            <svg width="14" height="14" viewBox="0 0 20 20" aria-hidden="true" class="inline -mt-0.5 mr-1.5"><path d="M3 10 L8 15 L17 5" fill="none" stroke="currentColor" stroke-width="2"></path></svg>Так
+          </button>
+          <button type="button" id="rsvp-attending-no" data-attend="no" class="attend-toggle" aria-pressed="false">
+            <svg width="14" height="14" aria-hidden="true" class="inline -mt-0.5 mr-1.5"><use href="#icon-close"></use></svg>Ні
+          </button>
+        </fieldset>
+        <div class="sr-only">
+          <label for="rsvp-honeypot">Залиште це поле порожнім</label>
+          <input type="text" id="rsvp-honeypot" name="company" tabindex="-1" autocomplete="off" />
+        </div>
+        <ul class="text-error text-[12.5px] list-none m-0 p-0 text-left" id="rsvp-errors" hidden></ul>
+        <button type="submit" id="rsvp-submit" class="font-script text-[19px] py-3.5 rounded-full bg-[linear-gradient(135deg,#B97C82,#A88355)] text-cream border-none cursor-pointer">Надіслати</button>
+      </form>
+
+      <div id="rsvp-success" class="hidden fixed inset-0 z-[100] items-center justify-center bg-ink/45 backdrop-blur-sm p-6" role="dialog" aria-modal="true" aria-labelledby="rsvp-success-title">
+        <div class="relative w-full max-w-[340px] flex flex-col items-center gap-3.5 px-[26px] py-[34px] rounded-2xl bg-[#FFFDF9] shadow-[0_20px_60px_rgba(58,28,26,0.35)] border-t-[3px] border-t-powder-rose">
+          <button type="button" id="rsvp-success-close" class="absolute top-3 right-3 w-7 h-7 flex items-center justify-center rounded-full text-caption bg-transparent border-none cursor-pointer" aria-label="Закрити">
+            <svg width="14" height="14" aria-hidden="true"><use href="#icon-close"></use></svg>
+          </button>
+          <svg width="44" height="44" viewBox="0 0 44 44" aria-hidden="true"><circle cx="22" cy="22" r="20" fill="none" stroke="#CB9CA0" stroke-width="1.4"></circle><path d="M13 22 L19 28 L31 15" fill="none" stroke="#CB9CA0" stroke-width="2"></path></svg>
+          <div id="rsvp-success-title" class="font-script text-2xl text-ink">Дякуємо!</div>
+          <p class="text-sm text-ink-soft m-0 text-center">Вашу відповідь отримано. З нетерпінням чекаємо на зустріч.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

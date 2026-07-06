@@ -5,11 +5,10 @@ import { validateRsvp } from './rsvp.js';
 
 const WEDDING_DATE = new Date('2026-09-13T00:00:00');
 
-// TODO: fill in once the Google Form exists (spec.md section 4/6).
 const GOOGLE_FORM_CONFIG = {
-  actionUrl: '', // e.g. 'https://docs.google.com/forms/d/e/FORM_ID/formResponse'
-  entryName: '', // e.g. 'entry.111111111'
-  entryAttending: '', // e.g. 'entry.222222222'
+  actionUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSfVtXELpWWE0OntDWdi79mjKLW0eOqQ7ZG_FX_nS3EJVd-r-Q/formResponse',
+  entryName: 'entry.788042615',      // Ім'я та прізвище
+  entryAttending: 'entry.152858440', // Так / Ні
 };
 
 const RSVP_RESUBMIT_GUARD_MS = 60_000;
@@ -29,12 +28,21 @@ function initCountdown() {
   };
   if (!els.days) return;
 
+  function setDigit(el, value) {
+    const text = pad(value);
+    if (el.textContent === text) return;
+    el.textContent = text;
+    el.classList.remove('countdown-tick');
+    void el.offsetWidth; // restart the animation
+    el.classList.add('countdown-tick');
+  }
+
   function tick() {
     const t = calculateTimeLeft(WEDDING_DATE);
-    els.days.textContent = pad(t.days);
-    els.hours.textContent = pad(t.hours);
-    els.minutes.textContent = pad(t.minutes);
-    els.seconds.textContent = pad(t.seconds);
+    setDigit(els.days, t.days);
+    setDigit(els.hours, t.hours);
+    setDigit(els.minutes, t.minutes);
+    setDigit(els.seconds, t.seconds);
     if (t.ended) clearInterval(intervalId);
   }
 
@@ -54,9 +62,8 @@ function initCalendar() {
     } else if (cell.isWeddingDay) {
       el.innerHTML = `
         <div class="calendar__day--wedding-badge">
-          <span class="font-heading text-sm font-bold text-cream">${cell.day}</span>
+          <span class="font-heading text-sm text-cream">${cell.day}</span>
         </div>
-        <span aria-hidden="true" class="calendar__heart">♥</span>
       `;
       el.setAttribute('aria-label', '13 вересня — день весілля');
     } else {
@@ -115,6 +122,10 @@ function initRsvpForm() {
     form.hidden = true;
     successCard.classList.remove('hidden');
     successCard.classList.add('flex');
+    const card = successCard.querySelector(':scope > div');
+    card.classList.remove('modal-pop');
+    void card.offsetWidth; // restart the animation
+    card.classList.add('modal-pop');
   }
 
   function hideSuccessModal() {
@@ -196,8 +207,28 @@ function initNav() {
   });
 }
 
+function initNavVisibility() {
+  const nav = document.getElementById('nav');
+  const hero = document.getElementById('hero');
+  if (!nav || !hero) return;
+
+  if (!('IntersectionObserver' in window)) {
+    nav.classList.add('nav--visible');
+    return;
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    for (const entry of entries) {
+      nav.classList.toggle('nav--visible', !entry.isIntersecting);
+    }
+  }, { threshold: 0 });
+
+  observer.observe(hero);
+}
+
 initCountdown();
 initCalendar();
 initReveal();
 initRsvpForm();
 initNav();
+initNavVisibility();

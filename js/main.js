@@ -211,6 +211,31 @@ function initNav() {
   });
 }
 
+function initHeroParallax() {
+  const hero = document.getElementById('hero');
+  const cutout = hero?.querySelector('.hero-cutout');
+  if (!hero || !cutout) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  const PARALLAX_FACTOR = 0.25;
+  let ticking = false;
+
+  function update() {
+    const rect = hero.getBoundingClientRect();
+    const progress = Math.min(Math.max(-rect.top / rect.height, 0), 1);
+    cutout.style.setProperty('--hero-parallax-y', `${(progress * rect.height * PARALLAX_FACTOR).toFixed(1)}px`);
+    ticking = false;
+  }
+
+  window.addEventListener('scroll', () => {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(update);
+  }, { passive: true });
+
+  update();
+}
+
 function initNavVisibility() {
   const nav = document.getElementById('nav');
   const hero = document.getElementById('hero');
@@ -236,3 +261,4 @@ initReveal();
 initRsvpForm();
 initNav();
 initNavVisibility();
+initHeroParallax();
